@@ -175,8 +175,12 @@ section {
 }
 
 .btn a {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
+}
+
+.btn:hover {
+  transform: scale(1.1);
 }
 
 .btn:hover {
@@ -417,6 +421,12 @@ footer ul li a {
 
   .input-box i {
     font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-card img {
+    width: 100%;
   }
 }
 
