@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-decoration: none;
   scroll-behavior: smooth;
   list-style: none;
@@ -68,7 +68,7 @@ li a {
 
 li a::before {
   position: absolute;
-  content: "";
+  content: '';
   width: 0;
   left: 0;
   height: 5px;
@@ -219,6 +219,9 @@ section {
   font-size: 4rem;
   font-weight: 600;
   margin-bottom: 3rem;
+  background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+  background-clip: text;
+  color: transparent;
 }
 
 .experience-info {
@@ -331,6 +334,24 @@ section {
   font-weight: 500;
 }
 
+.link__project {
+  color: #ff00ff;
+}
+
+.btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn a:hover {
+  border: 2px solid white;
+  background-color: white;
+  color: black;
+}
+
 /* Contact Section */
 
 .input-box {
@@ -343,27 +364,69 @@ section {
   margin-top: 5rem;
 }
 
-.input-box input {
+.contact__container {
+  width: 100%;
+}
+
+.contact__form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact__form form input {
   border-radius: 3rem;
   border: 2px solid black;
-  padding: 2rem 8rem;
-  font-size: 3rem;
+  padding: 1rem 4rem;
+  font-size: 1rem;
 }
 
-.input-box input::placeholder {
-  font-size: 3rem;
+.contact__form form textarea {
+  border-radius: 3rem;
+  border: 2px solid black;
+  padding: 1rem 4rem;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
-.input {
-  position: relative;
+.contact__form form input:focus,
+.contact__form form textarea:focus {
+  border: 2px solid #009dff;
+  box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.15);
+  background: #fff;
 }
 
-.input i {
-  position: absolute;
-  font-size: 4rem;
-  top: 50%;
-  left: 10px;
-  transform: translate(50%, -50%);
+.contact__form form input::placeholder,
+.contact__form form textarea::placeholder {
+  color: #888;
+  opacity: 1;
+  font-style: italic;
+}
+
+.contact__btn {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 3rem;
+  border: none;
+  background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.contact__btn:hover {
+  background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.contact__img {
+  display: none;
 }
 
 footer {
@@ -385,7 +448,7 @@ footer ul {
 }
 
 footer ul li a {
-  color: black;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -510,17 +573,34 @@ footer ul li a {
     width: 80vw;
   }
 
-  .input-box input {
-    padding: 0.5rem 3rem;
-    width: 80%;
-    font-size: 1.5rem;
-  }
-
-  .input-box input::placeholder {
-    font-size: 1.5rem;
-  }
-
   footer ul {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .img__skills {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+  .contact__img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 2rem;
+    object-fit: cover;
+  }
+
+  .contact__form {
+    width: 100%;
   }
 }
