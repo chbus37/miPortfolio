@@ -183,14 +183,37 @@ section {
   transform: scale(1.1);
 }
 
-.btn:hover {
+.btn:hover,
+.btn:hover a {
   background-color: black;
   color: white;
 }
 
-.btn a:hover {
-  background-color: black;
-  color: white;
+.btn-github {
+  background: transparent;
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  text-wrap: nowrap;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-github a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.btn-github:hover,
+.btn-github:hover a {
+  background: #fff;
+  color: #24292e;
 }
 
 .socials {
@@ -344,12 +367,6 @@ section {
   height: 100%;
   color: inherit;
   text-decoration: none;
-}
-
-.btn a:hover {
-  border: 2px solid white;
-  background-color: white;
-  color: black;
 }
 
 /* Contact Section */
@@ -535,6 +552,7 @@ footer ul li a {
 @media (max-width: 600px) {
   header #menu-icon {
     display: block;
+    cursor: pointer;
   }
 
   .nav-links {
